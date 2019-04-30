@@ -24,6 +24,15 @@
   },
   "devDependencies": {
     "@nice-labs/typed-css-modules": "^1.2.1",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/parser": "^1.7.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "husky": "^2.1.0",
+    "lint-staged": "^8.1.5",
     "prettier": "^1.17.0"
   },
   "keywords": [
@@ -33,10 +42,25 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
+    "format": "eslint --fix ./src/**/*.{ts,tsx,js} && prettier --write ./src/**/*.{scss,css,json}",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./src/**/*.{ts,tsx,js}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "./src/**/*.{css,scss,json}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
