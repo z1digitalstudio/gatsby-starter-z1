@@ -1,6 +1,6 @@
-import React from "react"
-import Z1Logo from "../../assets/z1.svg"
-import styles from "./Starter.module.scss"
+import React from 'react';
+import Z1Logo from '../../assets/z1.svg';
+import styles from './Starter.module.scss';
 
 function Starter() {
   return (
@@ -9,7 +9,7 @@ function Starter() {
 
       <h1>Gatsby Starter</h1>
     </div>
-  )
+  );
 }
 
-export default Starter
+export default Starter;
