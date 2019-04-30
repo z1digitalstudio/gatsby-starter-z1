@@ -4,10 +4,10 @@ import styles from "./Starter.module.scss"
 
 function Starter() {
   return (
-    <div>
-      <h1>Z1 Gatsby Starter</h1>
-
+    <div className={styles.container}>
       <Z1Logo className={styles.logo} />
+
+      <h1>Gatsby Starter</h1>
     </div>
   )
 }
