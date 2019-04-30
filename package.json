@@ -23,6 +23,7 @@
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {
+    "@nice-labs/typed-css-modules": "^1.2.1",
     "prettier": "^1.17.0"
   },
   "keywords": [
