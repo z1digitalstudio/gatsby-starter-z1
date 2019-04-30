@@ -1,9 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
 import Z1Logo from "../assets/z1.svg"
 
 const IndexPage = () => (
