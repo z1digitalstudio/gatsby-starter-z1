@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-starter-z1",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Z1 Lab <lab@z1.digital>",
   "dependencies": {
     "gatsby": "^2.3.32",
     "gatsby-image": "^2.0.40",
