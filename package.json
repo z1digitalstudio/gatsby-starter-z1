@@ -24,6 +24,9 @@
   },
   "devDependencies": {
     "@nice-labs/typed-css-modules": "^1.2.1",
+    "@types/react": "^16.8.15",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-helmet": "^5.0.8",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
     "eslint": "^5.16.0",
@@ -33,7 +36,8 @@
     "eslint-plugin-react-hooks": "^1.6.0",
     "husky": "^2.1.0",
     "lint-staged": "^8.1.5",
-    "prettier": "^1.17.0"
+    "prettier": "^1.17.0",
+    "typescript": "^3.4.5"
   },
   "keywords": [
     "gatsby"
@@ -45,7 +49,8 @@
     "format": "eslint --fix ./src/**/*.{ts,tsx,js} && prettier --write ./src/**/*.{scss,css,json}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "tsc": "tsc"
   },
   "husky": {
     "hooks": {
