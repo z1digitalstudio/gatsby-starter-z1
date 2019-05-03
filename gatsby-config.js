@@ -5,6 +5,24 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-transformer-yaml-full`,
+    {
+      resolve: `gatsby-plugin-i18n`,
+      options: {
+        langKeyForNull: `en`,
+        langKeyDefault: `en`,
+        useLangKeyLayout: true,
+        prefixDefault: false,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/content`,
+      },
+    },
+    `gatsby-transformer-remark`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sass`,
     {
