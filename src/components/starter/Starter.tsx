@@ -15,13 +15,13 @@ export interface StarterData {
 }
 
 function Starter() {
-  const page = usePageContext<StarterData>();
+  const { data } = usePageContext<StarterData>();
 
   return (
     <div className={styles.container}>
       <Z1Logo className={styles.logo} />
 
-      <h1>{page.allStarterYaml.nodes[0].title}</h1>
+      <h1>{data.allStarterYaml.nodes[0].title}</h1>
     </div>
   );
 }

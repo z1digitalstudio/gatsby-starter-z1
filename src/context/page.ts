@@ -1,9 +1,15 @@
 import { createContext, useContext } from 'react';
 
-export const PageContext = createContext<any>(null);
+interface PageContext<T> {
+  lang: string;
+  defaultLanguage: string;
+  data: T;
+}
+
+export const PageContext = createContext<PageContext<any>>(null);
 
 export function usePageContext<T>() {
-  const data = useContext<T>(PageContext);
+  const data = useContext<PageContext<T>>(PageContext);
 
   return data;
 }

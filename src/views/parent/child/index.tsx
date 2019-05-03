@@ -3,7 +3,7 @@ import Layout from '../../../components/layout';
 import SEO from '../../../components/seo';
 import Starter, { StarterData } from '../../../components/starter/Starter';
 import { graphql, Link } from 'gatsby';
-import { PageContext } from '../../../context/page';
+import { PageContext, usePageContext } from '../../../context/page';
 
 export interface NestedData {
   allChildYaml: {
@@ -15,8 +15,10 @@ export interface NestedData {
   };
 }
 
-const NestedPage = ({ data }: { data: NestedData }) => (
-  <PageContext.Provider value={data}>
+const NestedPage = () => {
+  const { data } = usePageContext<NestedData>();
+
+  return (
     <Layout>
       <SEO
         title={data.allChildYaml.nodes[0].title}
@@ -25,8 +27,8 @@ const NestedPage = ({ data }: { data: NestedData }) => (
 
       <h1>{data.allChildYaml.nodes[0].title}</h1>
     </Layout>
-  </PageContext.Provider>
-);
+  );
+};
 
 export const query = graphql`
   query($lang: String!) {

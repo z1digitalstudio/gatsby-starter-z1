@@ -76,6 +76,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       path,
       context: {
         lang,
+        defaultLanguage,
       },
       component: resolve(join('src', 'views', pageName, 'index.tsx')),
     });

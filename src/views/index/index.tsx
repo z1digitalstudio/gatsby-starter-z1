@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
 import Starter, { StarterData } from '../../components/starter/Starter';
-import { graphql, Link } from 'gatsby';
-import { PageContext } from '../../context/page';
+import { graphql } from 'gatsby';
+import { usePageContext } from '../../context/page';
+import { Link as GatsbyLink } from 'gatsby';
+import Link from '../../components/link/Link';
 
 export interface IndexData extends StarterData {
   allIndexYaml: {
@@ -17,8 +19,10 @@ export interface IndexData extends StarterData {
   };
 }
 
-const IndexPage = ({ data }: { data: IndexData }) => (
-  <PageContext.Provider value={data}>
+const IndexPage = () => {
+  const { data, lang } = usePageContext<IndexData>();
+
+  return (
     <Layout>
       <SEO
         title={data.allIndexYaml.nodes[0].title}
@@ -27,18 +31,15 @@ const IndexPage = ({ data }: { data: IndexData }) => (
 
       <Starter />
 
-      <Link to="/es/parent/child">Nested page ES</Link>
+      <Link to="/parent/child">Nested page</Link>
       <br />
 
-      <Link to="/parent/child">Nested page EN</Link>
+      <GatsbyLink to="/">English</GatsbyLink>
       <br />
-
-      <Link to="/">English</Link>
-      <br />
-      <Link to="/es">Español</Link>
+      <GatsbyLink to="/es">Español</GatsbyLink>
     </Layout>
-  </PageContext.Provider>
-);
+  );
+};
 
 export const query = graphql`
   query($lang: String!) {
