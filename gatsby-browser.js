@@ -5,6 +5,7 @@
  */
 
 // You can delete this file if you're not using it
+import './src/styles/global.scss';
 import { langWrapper } from './config/langWrapper';
 
 export const wrapPageElement = langWrapper;

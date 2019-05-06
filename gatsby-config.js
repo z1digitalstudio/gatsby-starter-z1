@@ -24,7 +24,18 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        data: `
+          @import './src/styles/variables.scss';
+          @import './src/styles/functions.scss';
+          @import './src/styles/responsive.scss';
+          @import './src/styles/transitions.scss';
+        `,
+        includePaths: ['src/components'],
+      },
+    },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
