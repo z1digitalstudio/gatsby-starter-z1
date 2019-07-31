@@ -37,10 +37,13 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: 'gatsby-plugin-svgr',
       options: {
-        rule: {
-          include: /\.svg$/,
+        svgo: true,
+        svgoConfig: {
+          plugins: {
+            removeViewBox: false, // remove viewBox when possible (default)
+          },
         },
       },
     },

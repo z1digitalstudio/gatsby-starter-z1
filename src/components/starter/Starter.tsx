@@ -1,5 +1,5 @@
 import React from 'react';
-import Z1Logo from '../../assets/z1.svg';
+import { ReactComponent as Z1Logo } from '../../assets/z1.svg';
 import styles from './Starter.module.scss';
 import { graphql } from 'gatsby';
 import { usePageContext } from '../../context/page';
